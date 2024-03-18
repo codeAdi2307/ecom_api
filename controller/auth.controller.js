@@ -1,5 +1,5 @@
 import User from "../model/User.js"
-import jsonwebtoken from "jsonwebtoken"
+import Jwt  from "jsonwebtoken";
 // register
 export const userRegister = async (req,res)=>{
 
@@ -30,7 +30,7 @@ export const userLogin = async (req,res)=>{
         }
         const getPassword = userData.password;
         if(getPassword == password){
-            const accessToken = jsonwebtoken.sign({
+            const accessToken = Jwt.sign({
                 _id: userData._id,
                 isAdmin: userData.isAdmin
             },"aditya",{expiresIn:"3d"});
@@ -40,4 +40,11 @@ export const userLogin = async (req,res)=>{
     } catch (error) {
         res.json(error)
     }
+    }
+
+    // update
+    export const userUpdate = async(req,res,next)=>{
+           if(req.user.id === req.params.id || req.user.isAdmin){
+            
+           }
     }
