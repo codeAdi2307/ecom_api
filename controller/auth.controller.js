@@ -43,8 +43,27 @@ export const userLogin = async (req,res)=>{
     }
 
     // update
-    export const userUpdate = async(req,res,next)=>{
-           if(req.user.id === req.params.id || req.user.isAdmin){
+    // export const userUpdate = async(req,res,next)=>{
+    //        if(req.user.id === req.params.id || req.user.isAdmin){
             
-           }
+    //        }
+    // }
+    // delete
+    export const userDelete = async (req,res,next)=>{
+        try {
+            await User.findByIdAndDelete(req.params.id)
+            res.json({message:"User has been deleted"})
+        } catch (error) {
+            res.json({error})
+        }
+    }
+
+    // get user by id
+    export const userDetails = async (req,res,next)=>{
+        try {
+            const user = await User.findById(req.params.id)
+            res.json(user)
+        } catch (error) {
+            res.json({error})
+        }
     }

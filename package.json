@@ -16,5 +16,14 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.1",
     "nodemon": "^3.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeAdi2307/ecom_api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codeAdi2307/ecom_api/issues"
+  },
+  "homepage": "https://github.com/codeAdi2307/ecom_api#readme"
 }
